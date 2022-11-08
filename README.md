@@ -1,4 +1,4 @@
 # Collisional dynamics
 
-A Bokeh application.
+A minimal Bokeh application.
 
