@@ -11,12 +11,13 @@ import gas
 
 color_mapper = LinearColorMapper(palette="Turbo256", low = -np.pi, high = np.pi)
 
-system = gas.System(N=500,L=100.0, T=1.0)
+system = gas.System(N=100,L=50.0, T=1.0)
 dt = 1.0
-edges=np.linspace(0,5,64)
+edges=np.linspace(0,5,32)
 
 def animate():
-    system.evolve(dt)
+    for k in range(1):
+        system.evolve(dt)
     r = system.r
     speed = np.linalg.norm(system.v,axis=1)
     histo = np.histogram(speed, bins=edges,density=True)
@@ -34,7 +35,7 @@ histo_source = models.ColumnDataSource(hist)
 p = plotting.figure(
     title="Kinetic Gas",
     tools=["save", "reset", "box_zoom"],
-    plot_width=650, plot_height=650,
+    plot_width=500, plot_height=50,
     x_range=(0, system.L),
     y_range=(0, system.L)
 
