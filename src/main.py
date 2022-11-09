@@ -35,7 +35,7 @@ histo_source = models.ColumnDataSource(hist)
 p = plotting.figure(
     title="Kinetic Gas",
     tools=["save", "reset", "box_zoom"],
-    plot_width=500, plot_height=50,
+    plot_width=500, plot_height=500,
     x_range=(0, system.L),
     y_range=(0, system.L)
 
